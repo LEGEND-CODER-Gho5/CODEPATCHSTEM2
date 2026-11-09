@@ -214,14 +214,15 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
 <ul class="ways"><li>Join a chapter</li><li>Participate in workshops</li><li>Explore coding</li><li>Participate in mathematics activities</li><li>Contribute to projects</li><li>Help organize educational events</li></ul>
 </div>
 <form id="fm" novalidate>
-<p class="fine">This form is not connected to an inbox yet, so nothing is sent or saved. For now, Discord is the fastest way to reach us.</p>
+<p class="fine">Your answers are emailed to the CodePatch team. Prefer chat? Discord is the fastest way to reach us.</p>
 <div><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" aria-describedby="e-name"><p class="er" id="e-name"></p></div>
 <div><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" aria-describedby="e-email"><p class="er" id="e-email"></p></div>
 <div><label for="f-school">School</label><input id="f-school" name="school" aria-describedby="e-school"><p class="er" id="e-school"></p></div>
 <div><label for="f-grade">Grade</label><select id="f-grade" name="grade" aria-describedby="e-grade"><option value="">Choose a grade</option><option>9</option><option>10</option><option>11</option><option>12</option><option>Other</option></select><p class="er" id="e-grade"></p></div>
 <div><label for="f-interest">Area of interest</label><select id="f-interest" name="interest" aria-describedby="e-interest"><option value="">Choose an area</option><option>Computer Science</option><option>Mathematics</option><option>Engineering</option><option>Technology</option><option>Marketing</option><option>Not sure yet</option></select><p class="er" id="e-interest"></p></div>
 <div><label for="f-message">Message (optional)</label><textarea id="f-message" name="message" rows="4"></textarea></div>
-<div><button class="btn" type="submit">Check my answers</button></div>
+<input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
+<div><button class="btn" type="submit">Send</button></div>
 <p id="fs" role="status"></p>
 </form>
 </div></section>
@@ -361,13 +362,29 @@ $$('.rv').forEach(el=>io.observe(el));
 /* form: real validation, honest outcome */
 const fm=$('#fm'),fs=$('#fs');
 const rules={name:v=>v.trim().length>1||'Enter your name.',email:v=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim())||'Enter a valid email address, like name@example.com.',school:v=>v.trim().length>1||'Enter your school.',grade:v=>!!v||'Choose your grade.',interest:v=>!!v||'Choose an area of interest.'};
-fm.addEventListener('submit',e=>{
+const ENDPOINT='https://formsubmit.co/ajax/sbcpssocial5@gmail.com';
+const discord=()=>{const a=document.createElement('a');a.href='https://discord.gg/uTWEKDgGu';a.target='_blank';a.rel='noopener noreferrer';a.textContent='Open the Discord server';return a};
+fm.addEventListener('submit',async e=>{
  e.preventDefault();let bad=null;
  for(const k in rules){const f=fm.elements[k],r=rules[k](f.value),ok=r===true;$('#e-'+k).textContent=ok?'':r;f.setAttribute('aria-invalid',ok?'false':'true');if(!ok&&!bad)bad=f}
  if(bad){fs.textContent='';bad.focus();return}
- const a=document.createElement('a');a.href='https://discord.gg/uTWEKDgGu';a.target='_blank';a.rel='noopener noreferrer';a.textContent='Open the Discord server';
- fs.replaceChildren('Looks good, '+fm.elements.name.value.trim()+'. This site is not connected to an inbox yet, so nothing was sent or saved. To get started now: ',a);
+ if(fm.elements._honey.value)return;
+ const btn=fm.querySelector('button[type=submit]'),nm=fm.elements.name.value.trim();
+ btn.disabled=true;fs.textContent='Sending…';
+ try{
+  const d=Object.fromEntries(new FormData(fm));
+  d._subject='New CodePatch STEM interest form: '+nm;
+  d._template='table';
+  const r=await fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(d)});
+  const j=await r.json();
+  if(!r.ok||(j.success!==true&&j.success!=='true'))throw new Error('send failed');
+  fm.reset();
+  fs.textContent='Thanks, '+nm+'. Your message was sent and the team will reply to the email you gave.';
+ }catch(_){
+  fs.replaceChildren('Sorry, that did not go through. Please try again, or reach us on Discord: ',discord());
+ }finally{btn.disabled=false}
 });
+
 })();
 </script>
 </body>
