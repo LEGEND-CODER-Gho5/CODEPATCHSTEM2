@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CodePatch STEM | Building the next generation of innovation</title>
+<meta name="description" content="CodePatch STEM promotes accessible STEM education through computer science, mathematics, engineering, and technology. Featured chapter: South Brunswick High School, New Jersey.">
+<meta name="theme-color" content="#07070D">
+<!-- DEPLOY STEP: add og:image and og:url with the live absolute URL when the site is hosted -->
+<meta property="og:title" content="CodePatch STEM">
+<meta property="og:description" content="Where code meets creativity, mathematics meets possibility, and students build the future.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400&family=Space+Grotesk:wght@500;700&display=swap">
+<style>
+:root{--c:#07070D;--v:#8B5CF6;--v2:#A78BFA;--b:#38BDF8;--t:#F8FAFC;--t2:#A1A1AA;--ln:rgba(167,139,250,.24);--bo:rgba(161,161,170,.6);--pn:rgba(18,16,31,.78);--e:cubic-bezier(.22,.8,.2,1);--sh:0 1px 2px rgba(5,5,10,.95),0 3px 12px rgba(5,5,10,.78),0 10px 44px rgba(5,5,10,.8);--hd:"Space Grotesk",system-ui,sans-serif;--bd:Inter,system-ui,sans-serif;--mo:"JetBrains Mono",ui-monospace,monospace;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{background:var(--c);color-scheme:dark;scroll-behavior:smooth;scroll-padding-top:calc(64px + env(safe-area-inset-top,0px));overflow-x:hidden;overflow-x:clip}
+body{margin:0;background:var(--c);color:var(--t);font:400 1.05rem/1.65 var(--bd);overflow-x:hidden;overflow-x:clip;animation:fi .9s var(--e)}
+@keyframes fi{from{opacity:0}}
+@keyframes dr{to{transform:translate3d(-6%,4%,0) rotate(8deg)}}
+h1,h2,h3,p,dl,dd,ul{margin:0}
+h1,h2,h3{font-family:var(--hd);font-weight:700;letter-spacing:-.02em;line-height:1.04}
+h1{font-size:clamp(2.2rem,6vw,5.2rem);max-width:20ch}
+h2{font-size:clamp(1.9rem,4.4vw,3.5rem)}
+h3{font-size:1.2rem}
+a{color:inherit}
+.k{font:400 .74rem/1.4 var(--mo);letter-spacing:.14em;text-transform:uppercase;color:var(--v2)}
+.lead{color:var(--t2);max-width:54ch}
+.skip{position:absolute;left:-999px;top:0;z-index:40;background:var(--v2);color:var(--c);padding:.7rem 1rem}.skip:focus{left:0}
+.env{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.env::before{content:"";position:absolute;inset:-25%;background:radial-gradient(38% 34% at 22% 28%,rgba(139,92,246,.2),transparent 70%),radial-gradient(34% 30% at 78% 70%,rgba(56,189,248,.1),transparent 70%);animation:dr 70s ease-in-out -20s infinite alternate}
+.env::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(167,139,250,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(167,139,250,.05) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(70% 60% at 50% 40%,#000,transparent);mask-image:radial-gradient(70% 60% at 50% 40%,#000,transparent)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:rgba(7,7,13,.85);z-index:30}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;display:flex;align-items:center;justify-content:space-between;padding:.75rem 5vw;background:rgba(7,7,13,.74);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid rgba(167,139,250,.14)}
+.brand{font:700 1.1rem var(--hd);text-decoration:none}.brand b{color:var(--v2)}
+nav{display:flex;gap:1.5rem}nav a{font:400 .74rem var(--mo);letter-spacing:.12em;text-transform:uppercase;color:var(--t2);text-decoration:none;padding:.5rem 0;transition:color .3s var(--e)}nav a:hover{color:var(--t)}
+.mbtn{display:none;font:400 .74rem var(--mo);letter-spacing:.12em;text-transform:uppercase;color:var(--t);background:none;border:1px solid var(--bo);border-radius:8px;padding:.5rem .9rem;min-height:44px;cursor:pointer}
+.btn{display:inline-flex;align-items:center;justify-content:center;font:500 .95rem var(--bd);color:var(--c);background:var(--v2);border:1px solid var(--v2);border-radius:10px;padding:.85rem 1.5rem;min-height:46px;text-decoration:none;cursor:pointer;transition:transform .3s var(--e),background .3s var(--e)}
+.btn:hover{background:#c4b5fd;transform:translateY(-2px)}.btn.g{background:none;color:var(--t);border-color:var(--bo)}.btn.g:hover{background:rgba(248,250,252,.08)}
+:focus-visible{outline:2px solid var(--v2);outline-offset:3px}
+main,footer{position:relative;z-index:1}
+.sec{padding:clamp(4.5rem,11vh,8rem) 6vw}.wrap{max-width:1180px;margin:0 auto}
+/* hero */
+.hero{height:400vh;position:relative}
+.stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:radial-gradient(60% 50% at 62% 44%,#16112e,var(--c) 75%)}
+#cv{position:absolute;inset:0;width:100%;height:100%}
+.scrim{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 120% 90% at 50% 45%,rgba(7,7,13,0) 35%,rgba(7,7,13,.66) 100%)}
+.band{position:absolute;inset:0;isolation:isolate;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:1.5rem;padding:0 6vw;opacity:0;pointer-events:none;text-shadow:var(--sh)}
+.b1{opacity:1;pointer-events:auto}
+.band::before{content:"";position:absolute;inset:-4%;z-index:-1;pointer-events:none;opacity:calc(.25 + .75*var(--k,1));background:radial-gradient(ellipse 60% 62% at 24% 50%,rgba(5,5,10,.7) 0%,rgba(5,5,10,.46) 46%,rgba(5,5,10,0) 76%)}
+.band>*{opacity:clamp(0,calc((var(--k,1) - var(--s,0))*2.4),1);transform:translateY(calc((1 - var(--k,1))*var(--dy,-22px)))}
+.band>:nth-child(2){--s:.15}.band>:nth-child(3){--s:.3}
+.b2>*{transform:scale(calc(.9 + .1*var(--k,1)));transform-origin:0 50%}.b3{--dy:28px}
+.band h2{max-width:16ch;font-size:clamp(2.2rem,5.4vw,4.6rem)}
+.sub{font-size:clamp(1.05rem,1.7vw,1.35rem);color:#d9d9e0;max-width:44ch}
+.cta{display:flex;flex-wrap:wrap;gap:.9rem}.band .btn{text-shadow:none}
+/* mission */
+.mis{height:240vh;position:relative}
+.mi{position:sticky;top:0;height:100vh;height:100svh;display:grid;place-items:center;padding:0 6vw}.mi>div{max-width:1080px}
+.mt{font-size:clamp(1.6rem,3.7vw,3.1rem);line-height:1.16;max-width:34ch}
+.w{opacity:.2;transition:opacity .45s var(--e)}.w.l{opacity:1}
+.mi .lead{margin-top:2rem}
+/* stem */
+#stem{display:grid;grid-template-columns:1fr 1fr;gap:6vw;max-width:1280px;margin:0 auto;padding:0 6vw}
+.pn{position:sticky;top:0;height:100vh;height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:1.4rem}
+.ills{position:relative;width:min(100%,420px);aspect-ratio:1}
+.ill{position:absolute;inset:0;width:100%;height:100%;fill:none;stroke:var(--v2);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;opacity:0;transition:opacity .6s var(--e)}
+.ill:nth-child(2){stroke:var(--b)}.ill:nth-child(4){stroke:#c4b5fd}
+.ill *{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.6s var(--e)}
+.ill.on{opacity:1}.ill.on *{stroke-dashoffset:0}
+.stp{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center;gap:1rem;opacity:.45;transition:opacity .6s var(--e)}.stp.on{opacity:1}
+/* path */
+.tri{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2.5rem}
+.st{border:1px solid var(--ln);border-radius:14px;padding:1.6rem;background:var(--pn);transition:border-color .5s var(--e)}
+.st h3{font-size:1.9rem;margin:.5rem 0 .7rem}.st .lead{font-size:1rem}
+.st .s{margin-top:1.2rem;font:400 .76rem var(--mo);color:var(--t2)}.st .s::after{content:"queued"}.st.d{border-color:var(--v2)}.st.d .s{color:var(--b)}.st.d .s::after{content:"done"}
+.term{margin-top:2rem;border:1px solid var(--ln);border-radius:14px;background:rgba(8,7,16,.85);padding:1.3rem 1.6rem;font:400 .88rem/1.9 var(--mo);color:var(--t2);max-width:520px}
+.term .ln{display:flex;justify-content:space-between}.term .ok{color:var(--b);opacity:0;transition:opacity .4s var(--e)}.term .d .ok{opacity:1}
+.bar{height:4px;border-radius:4px;background:rgba(167,139,250,.2);overflow:hidden;margin-top:.8rem}.bar i{display:block;height:100%;background:var(--v2);transform-origin:0 50%;transform:scaleX(var(--h,0))}
+.hr{display:flex;flex-wrap:wrap;align-items:center;gap:1.2rem;margin-top:1.4rem}.hr .btn{touch-action:manipulation;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+/* chapter */
+.ch{display:grid;grid-template-columns:1fr 1fr;gap:5vw;align-items:center}
+.big{font:700 clamp(5.5rem,19vw,15rem)/.85 var(--hd);letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1.5px rgba(167,139,250,.6)}
+.stats{display:flex;flex-wrap:wrap;gap:2.2rem;margin:1.8rem 0}.stats div{display:flex;flex-direction:column}.stats dd{font:700 2.6rem/1 var(--hd);color:var(--b)}.stats dt{color:var(--t2);font-size:.9rem;order:2}
+.dir{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:0 0 1.6rem}
+.cd{border:1px solid var(--ln);border-radius:14px;padding:1.2rem;background:var(--pn)}.cd.x{border-style:dashed;border-color:var(--bo)}.cd h3{margin-bottom:.4rem}.cd p{color:var(--t2);font-size:.95rem}.cd a{color:var(--v2)}
+/* team */
+.chips{display:flex;flex-wrap:wrap;gap:.6rem;margin:1.8rem 0 .8rem}
+.chip{font:400 .78rem var(--mo);letter-spacing:.08em;color:var(--t2);background:none;border:1px solid var(--bo);border-radius:99px;padding:.6rem 1.1rem;min-height:44px;cursor:pointer;transition:background .3s var(--e),color .3s var(--e)}.chip[aria-pressed=true]{color:var(--c);background:var(--v2);border-color:var(--v2)}
+#dd{color:var(--t2);min-height:1.7em}
+.grid{list-style:none;padding:0;margin:1.6rem 0 0;display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1rem}
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .8s var(--e),transform .8s var(--e);transition-delay:calc(var(--i,0)*80ms)}.js .rv.in{opacity:1;transform:none}
+.mc{height:100%;border:1px solid var(--ln);border-radius:14px;padding:1.2rem;background:var(--pn);transition:opacity .4s var(--e),transform .4s var(--e),border-color .4s var(--e)}.mc:hover{transform:translateY(-3px);border-color:var(--v2)}.mc.x{opacity:.25}
+.av{display:grid;place-items:center;width:46px;height:46px;border-radius:12px;font:700 1.15rem var(--hd);background:hsl(var(--hu) 50% 28%);border:1px solid hsl(var(--hu) 70% 62% / .55);margin-bottom:.9rem}
+.mc h3{margin-bottom:.3rem}.ro{font-size:.92rem}.tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.8rem}.tag{font:400 .7rem var(--mo);color:var(--t2);border:1px solid var(--ln);border-radius:99px;padding:.15rem .6rem}
+/* events, connect */
+.empty{max-width:620px;margin:2rem auto 0;text-align:center;border:1px dashed var(--bo);border-radius:16px;padding:2.4rem 1.6rem}.empty svg{width:56px;height:56px;fill:none;stroke:var(--v2);stroke-width:1.5;margin-bottom:1rem}.empty .lead{margin:.6rem auto 0}
+.soc{display:grid;grid-template-columns:1.4fr 1fr;grid-template-rows:1fr 1fr;gap:1rem;margin-top:2.2rem}
+.sc{position:relative;display:flex;flex-direction:column;justify-content:flex-end;gap:.5rem;padding:1.6rem;min-height:170px;border:1px solid var(--ln);border-radius:16px;overflow:hidden;background:var(--pn);text-decoration:none;transition:transform .4s var(--e),border-color .4s var(--e)}
+.sc::before{content:"";position:absolute;inset:0;opacity:0;background:radial-gradient(70% 90% at 15% 0%,var(--g),transparent 70%);transition:opacity .5s var(--e)}
+.sc>*{position:relative}.sc:hover{transform:translateY(-4px);border-color:var(--v2)}.sc:hover::before{opacity:1}
+.sc svg{width:38px;height:38px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}.sc h3{font-size:1.5rem}.sc p{color:var(--t2);font-size:.95rem}.sc .h{font:400 .8rem var(--mo);color:var(--v2)}
+.dc{grid-row:span 2;--g:rgba(139,92,246,.5)}.dc svg{width:68px;height:68px}.dc h3{font-size:2.4rem}.ig{--g:rgba(56,189,248,.32)}.yt{--g:rgba(167,139,250,.32)}
+/* join, faq */
+.jn{display:grid;grid-template-columns:1fr 1fr;gap:5vw}
+.ways{padding:0;margin:1.6rem 0 0;list-style:none}.ways li{padding:.75rem 0;border-bottom:1px solid var(--ln)}
+.fq{max-width:760px}details{border-bottom:1px solid var(--ln)}
+summary{cursor:pointer;display:flex;justify-content:space-between;gap:1rem;padding:1.2rem 0;min-height:44px;font:500 1.15rem var(--hd);list-style:none}summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--v2);transition:transform .3s var(--e)}details[open] summary::after{transform:rotate(45deg)}details p{color:var(--t2);padding-bottom:1.2rem;max-width:60ch}
+.fin{text-align:center;padding:clamp(6rem,16vh,11rem) 6vw;background:radial-gradient(50% 60% at 50% 55%,rgba(139,92,246,.22),transparent 70%)}
+.fin h2{font-size:clamp(2.2rem,6.4vw,5.4rem);max-width:16ch;margin:0 auto}.fin p{color:var(--t2);margin:1.4rem auto 2rem}
+footer{border-top:1px solid var(--ln);padding:2.5rem 6vw 2.5rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.6rem;color:var(--t2);font-size:.92rem;background:rgba(7,7,13,.7)}
+footer a{text-decoration:none;display:inline-block;padding:.5rem 0}footer a:hover{color:var(--t)}.fl{display:flex;flex-wrap:wrap;gap:1.2rem}
+body.paused *,body.paused *::before,body.paused *::after{animation-play-state:paused!important}
+@media(max-width:960px){.mbtn{display:block}nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;padding:.4rem 5vw 1rem;background:rgba(7,7,13,.97)}nav.open{display:flex}nav a{padding:.9rem 0}}
+@media(max-width:860px){#stem,.ch,.jn,.tri,.soc,.dir{grid-template-columns:1fr}.soc{grid-template-rows:none}.dc{grid-row:auto;min-height:220px}#stem{gap:0}.pn{height:36vh;top:calc(56px + env(safe-area-inset-top,0px));background:linear-gradient(var(--c) 82%,transparent);z-index:2}.pn .k{display:none}.ills{width:min(30vh,60vw)}.stp{min-height:72vh}.big{font-size:clamp(5rem,30vw,9rem)}}
+@media (max-width: 720px), (orientation: portrait) and (max-width: 1024px), (orientation: portrait) and (pointer: coarse), (orientation: landscape) and (pointer: coarse) and (max-height: 560px), (prefers-reduced-motion: reduce){
+.hero{height:auto}.stage{position:relative;height:auto;min-height:100svh;padding:5.5rem 0 3rem;display:flex;flex-direction:column;justify-content:center;gap:3rem}
+.band{position:relative;inset:auto;opacity:1!important;pointer-events:auto!important}.band>*{opacity:1!important;transform:none!important}.band::before{opacity:1}}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.js .rv{opacity:1;transform:none}.mis{height:auto}.mi{position:static;height:auto;padding:5rem 6vw}.ill *{stroke-dashoffset:0}}
+.cpf-root,.cpf-portal{--cf-bg:#0D0B17;--cf-fld:#12101F;--cf-vi:#8B5CF6;--cf-vi2:#A78BFA;--cf-bl:#38BDF8;--cf-tx:#F8FAFC;--cf-mu:#A1A1AA;--cf-bad:#F87171;--cf-ok:#39FF88;font-family:var(--bd,Inter,system-ui,sans-serif);color:var(--cf-tx)}
+.cpf-form{display:grid;gap:1.1rem;padding:clamp(1.25rem,3vw,2rem);background:var(--cf-bg);border:1px solid rgba(167,139,250,.24);border-radius:16px;box-shadow:0 10px 44px rgba(5,5,10,.8)}
+.cpf-form *{box-sizing:border-box}
+.cpf-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.1rem}
+.cpf-f{display:grid;gap:.4rem;align-content:start}
+.cpf-f label{font:500 .9rem var(--bd,Inter,system-ui,sans-serif)}
+.cpf-req{color:var(--cf-bad);margin-left:.2em}
+.cpf-f input,.cpf-f select,.cpf-f textarea{width:100%;font:inherit;font-size:1rem;color:var(--cf-tx);background:var(--cf-fld);border:1px solid rgba(161,161,170,.4);border-radius:10px;padding:.75rem 1rem;min-height:46px;color-scheme:dark;transition:border-color .25s,box-shadow .25s}
+.cpf-f textarea{resize:vertical}
+.cpf-f select{appearance:none;-webkit-appearance:none;padding-right:2.5rem;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'%3E%3Cpath d='M2 4.5l5 5 5-5' fill='none' stroke='%23A78BFA' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;background-size:14px}
+.cpf-f select option{background:#12101F;color:#F8FAFC}
+.cpf-f input:hover,.cpf-f select:hover,.cpf-f textarea:hover{border-color:var(--cf-vi);box-shadow:0 0 0 1px var(--cf-vi),0 0 18px rgba(139,92,246,.35)}
+.cpf-f input:focus,.cpf-f select:focus,.cpf-f textarea:focus{outline:none;border-color:var(--cf-bl);box-shadow:0 0 0 3px rgba(56,189,248,.25),0 0 22px rgba(56,189,248,.35)}
+.cpf-f [aria-invalid=true],.cpf-f [aria-invalid=true]:hover,.cpf-f [aria-invalid=true]:focus{border-color:var(--cf-bad);box-shadow:0 0 0 3px rgba(248,113,113,.22),0 0 18px rgba(248,113,113,.25)}
+.cpf-err{margin:0;font-size:.85rem;color:#FCA5A5}.cpf-err:empty{display:none}
+.cpf-note{margin:0;color:var(--cf-mu);font-size:.9rem}
+.cpf-banner{display:flex;gap:.7rem;align-items:flex-start;padding:.9rem 1rem;border-radius:12px;border:1px solid var(--cf-bad);background:rgba(248,113,113,.12);color:#FEE2E2;font-size:.95rem;line-height:1.45;box-shadow:0 0 24px rgba(248,113,113,.2);animation:cpf-shake .45s}
+.cpf-banner[hidden]{display:none}
+.cpf-banner::before{content:"!";flex:none;width:22px;height:22px;border-radius:50%;background:var(--cf-bad);color:#0D0B17;font:700 .9rem/22px system-ui,sans-serif;text-align:center}
+.cpf-banner p{margin:0}.cpf-banner a{color:#fff;text-decoration:underline}
+.cpf-btn{justify-self:start;min-height:48px;padding:.85rem 1.8rem;font:600 1rem var(--bd,Inter,system-ui,sans-serif);color:#07070D;background:linear-gradient(135deg,var(--cf-vi),var(--cf-bl));border:0;border-radius:10px;cursor:pointer;transition:transform .3s,box-shadow .3s}
+.cpf-btn:hover{transform:translateY(-2px);box-shadow:0 0 0 1px var(--cf-vi),0 0 26px rgba(139,92,246,.6),0 0 40px rgba(56,189,248,.35)}
+.cpf-btn:focus-visible{outline:2px solid var(--cf-bl);outline-offset:3px}
+.cpf-btn[disabled]{opacity:.65;cursor:wait;transform:none;box-shadow:none}
+.cpf-portal{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;padding:1.5rem;text-align:center;background:rgba(7,7,13,.9);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);opacity:0;transition:opacity .6s ease;overscroll-behavior:contain;outline:none}
+.cpf-portal[hidden]{display:none}.cpf-portal.is-open{opacity:1}
+.cpf-in{display:grid;justify-items:center;gap:1.4rem;max-width:34rem}
+.cpf-in h2{margin:0;font:700 clamp(1.5rem,5vw,2.4rem)/1.1 var(--hd,"Space Grotesk",system-ui,sans-serif);letter-spacing:.12em;color:var(--cf-ok);text-shadow:0 0 18px rgba(57,255,136,.55)}
+.cpf-in p{margin:0;font-size:1.05rem;line-height:1.6}
+.cpf-check{position:relative;width:clamp(110px,26vw,150px);aspect-ratio:1;animation:cpf-pulse 1.8s ease-in-out infinite}
+.cpf-check::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--cf-ok);animation:cpf-ring 1.8s ease-out infinite}
+.cpf-check svg{width:100%;height:100%;overflow:visible;filter:drop-shadow(0 0 10px var(--cf-ok)) drop-shadow(0 0 28px rgba(57,255,136,.6))}
+.cpf-check circle,.cpf-check path{fill:none;stroke:var(--cf-ok);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.cpf-check path{stroke-dasharray:1;stroke-dashoffset:1;animation:cpf-draw .6s .25s ease-out forwards}
+.cpf-bar{width:min(420px,80vw);filter:drop-shadow(0 0 8px rgba(57,255,136,.75))}
+.cpf-trk{height:8px;border-radius:99px;overflow:hidden;background:rgba(57,255,136,.14)}
+.cpf-trk i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--cf-ok),var(--cf-bl));-webkit-mask:repeating-linear-gradient(90deg,#000 0 8px,transparent 8px 11px);mask:repeating-linear-gradient(90deg,#000 0 8px,transparent 8px 11px)}
+.cpf-portal:not([hidden]) .cpf-trk i{animation:cpf-fill 4s linear forwards}
+@keyframes cpf-pulse{50%{transform:scale(1.09)}}
+@keyframes cpf-ring{from{transform:scale(1);opacity:.7}to{transform:scale(1.7);opacity:0}}
+@keyframes cpf-draw{to{stroke-dashoffset:0}}
+@keyframes cpf-fill{to{width:100%}}
+@keyframes cpf-shake{20%{transform:translateX(-6px)}40%{transform:translateX(5px)}60%{transform:translateX(-3px)}80%{transform:translateX(2px)}}
+@media(prefers-reduced-motion:reduce){.cpf-check,.cpf-check::after,.cpf-banner{animation:none}.cpf-check path{animation:none;stroke-dashoffset:0}.cpf-portal{transition-duration:.01s}}
+.fb{grid-column:1/-1;flex-basis:100%;display:flex;flex-wrap:wrap;gap:.2rem 1.4rem}.fb a{color:var(--t2);text-decoration:none;padding:.5rem 0}.fb a:hover{color:var(--t)}.fc{grid-column:1/-1;flex-basis:100%;margin:0;color:var(--t2);font-size:.85rem}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="env" aria-hidden="true"></div>
+<header>
+<a class="brand" href="#top">CodePatch<b>STEM</b></a>
+<button class="mbtn" type="button" aria-expanded="false" aria-controls="nv">Menu</button>
+<nav id="nv" aria-label="Primary"><a href="#mission">Mission</a><a href="#stem">STEM</a><a href="#path">Path</a><a href="#chapter">Chapter</a><a href="#team">Team</a><a href="#connect">Connect</a><a href="#join">Join</a></nav>
+</header>
+<main id="main" tabindex="-1">
+
+<section class="hero" id="top" aria-label="Introduction">
+<div class="stage">
+<canvas id="cv" aria-hidden="true"></canvas><div class="scrim"></div>
+<div class="band b1" data-a="0" data-b=".32"><h1>BUILDING THE NEXT GENERATION OF INNOVATION.</h1><p class="sub">Where code meets creativity, mathematics meets possibility, and students build the future.</p><div class="cta"><a class="btn" href="#stem">Explore CodePatch STEM</a><a class="btn g" href="#chapter">Discover Our Chapters</a></div></div>
+<div class="band b2" data-a=".34" data-b=".66"><h2>Accessible STEM education, built by students.</h2><p class="sub">Computer science, mathematics, engineering, and technology, explored together.</p></div>
+<div class="band b3" data-a=".68" data-b="1"><h2>Four ways in.</h2><p class="sub">Pick the one that pulls you first. The rest are one scroll away.</p></div>
+</div>
+</section>
+
+<section class="mis" id="mission" aria-label="Our mission">
+<div class="mi"><div><h2 class="mt">CodePatch STEM promotes accessible STEM education through computer science, mathematics, engineering, technology, student collaboration, workshops, and educational initiatives.</h2><p class="lead">The organization encourages students to explore technology, develop technical knowledge, collaborate with others, and apply their learning through practical activities.</p></div></div>
+</section>
+
+<section id="stem" aria-label="The four dimensions of STEM">
+<div class="pn"><p class="k">Four dimensions of STEM</p>
+<div class="ills" aria-hidden="true">
+<svg class="ill on" viewBox="0 0 200 200"><path pathLength="1" d="M70 62 30 100l40 38"/><path pathLength="1" d="M130 62l40 38-40 38"/><path pathLength="1" d="M112 52 88 148"/><path pathLength="1" d="M40 172h56M40 186h110"/></svg>
+<svg class="ill" viewBox="0 0 200 200"><path pathLength="1" d="M14 110h172"/><path pathLength="1" d="M100 24v172"/><path pathLength="1" d="M14 110C40 30 70 30 100 110S160 190 186 110"/><circle pathLength="1" cx="100" cy="110" r="46"/></svg>
+<svg class="ill" viewBox="0 0 200 200"><path pathLength="1" d="M100 36l48 28v72l-48 28-48-28V64z"/><path pathLength="1" d="M52 64l96 72M148 64l-96 72M100 36v128"/><circle pathLength="1" cx="100" cy="100" r="14"/></svg>
+<svg class="ill" viewBox="0 0 200 200"><path pathLength="1" d="M62 62h76v76H62z"/><path pathLength="1" d="M82 62V32M100 62V32M118 62V32M82 138v30M100 138v30M118 138v30M62 82H32M62 100H32M62 118H32M138 82h30M138 100h30M138 118h30"/><circle pathLength="1" cx="100" cy="100" r="12"/></svg>
+</div></div>
+<div>
+<article class="stp on"><h2>Computer Science</h2><p class="lead">Programming, computational thinking, and software development.</p><p class="lead">Think in steps, write them down, and watch a machine follow them.</p></article>
+<article class="stp"><h2>Mathematics</h2><p class="lead">Mathematical reasoning, problem-solving, and mathematical exploration.</p><p class="lead">Find the pattern, test whether it holds, then look for where it breaks.</p></article>
+<article class="stp"><h2>Engineering</h2><p class="lead">Design thinking, technical problem-solving, and practical experimentation.</p><p class="lead">Sketch it, build it, test it, and fix what fails.</p></article>
+<article class="stp"><h2>Technology</h2><p class="lead">Exploring emerging technologies and digital innovation.</p><p class="lead">Look at what is new, ask what it is good for, and try it.</p></article>
+</div>
+</section>
+
+<section class="sec" id="path"><div class="wrap">
+<h2>Three stages, one loop.</h2>
+<div class="tri">
+<article class="st"><p class="k">01</p><h3>LEARN</h3><p class="lead">Develop technical knowledge and explore new concepts.</p><p class="s" aria-hidden="true">status: </p></article>
+<article class="st"><p class="k">02</p><h3>BUILD</h3><p class="lead">Apply knowledge through projects, coding, and hands-on activities.</p><p class="s" aria-hidden="true">status: </p></article>
+<article class="st"><p class="k">03</p><h3>COLLABORATE</h3><p class="lead">Exchange ideas, work together, and create educational opportunities.</p><p class="s" aria-hidden="true">status: </p></article>
+</div>
+<div class="term" aria-hidden="true"><div>$ codepatch run --stages</div><div class="ln"><span>learn</span><span class="ok">ok</span></div><div class="ln"><span>build</span><span class="ok">ok</span></div><div class="ln"><span>collaborate</span><span class="ok">ok</span></div><div class="bar"><i></i></div></div>
+<div class="hr"><button class="btn" id="hold" type="button">Hold to run the patch</button><p id="hst" class="lead" role="status">Idle. Press and hold the button.</p></div>
+</div></section>
+
+<section class="sec" id="chapter"><div class="wrap ch">
+<p class="big" aria-hidden="true">SBHS</p>
+<div>
+<p class="k">Featured chapter</p>
+<h2>South Brunswick High School</h2>
+<p class="lead" style="margin-top:1rem">Our featured chapter, based in South Brunswick, New Jersey, USA. Students run it, and it is organized into Coding, Mathematics, and Marketing departments.</p>
+<dl class="stats"><div><dt>Members</dt><dd>12</dd></div><div><dt>Departments</dt><dd>3</dd></div><div><dt>Featured chapter</dt><dd>1</dd></div></dl>
+<div class="dir"><div class="cd"><h3>SBHS Chapter</h3><p>South Brunswick High School, South Brunswick, New Jersey, USA. Chapter President: Srijeet Ghosh.</p></div><div class="cd x"><h3>Start a chapter</h3><p>This directory is built to add more chapters. <a href="#join">Tell us about your school.</a></p></div></div>
+<a class="btn" href="#team">Meet the team</a>
+</div></div></section>
+
+<section class="sec" id="team"><div class="wrap">
+<h2>The people behind the chapter.</h2>
+<p class="lead" style="margin-top:1rem">Twelve members across three departments. Pick a department to see who is in it.</p>
+<div class="chips" role="group" aria-label="Filter by department"><button class="chip" data-f="All" aria-pressed="true">All</button><button class="chip" data-f="Coding" aria-pressed="false">Coding</button><button class="chip" data-f="Mathematics" aria-pressed="false">Mathematics</button><button class="chip" data-f="Marketing" aria-pressed="false">Marketing</button></div>
+<p id="dd" aria-live="polite">Showing all twelve members.</p>
+<ul class="grid" id="roster"></ul>
+</div></section>
+
+<section class="sec" id="events"><div class="wrap">
+<h2>Events and workshops</h2>
+<div class="empty"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><h3>No verified events yet</h3><p class="lead">When a date is confirmed, it will appear here with its time, place, and a registration link. Until then, follow Discord and Instagram for announcements.</p></div>
+</div></section>
+
+<section class="sec" id="connect"><div class="wrap">
+<h2>CONNECT WITH CODEPATCH STEM</h2>
+<p class="lead" style="margin-top:1rem">Stay connected with our community, explore our activities, and follow our journey through STEM education.</p>
+<div class="soc">
+<a class="sc dc" href="https://discord.gg/uTWEKDgGu" target="_blank" rel="noopener noreferrer" aria-label="Join the CodePatch STEM Discord, opens in a new tab"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 7.5C8 5.6 10 5 12 5s4 .6 6.5 2.5L21 17c-2 2.2-4.2 3-6 3l-1-2h-4l-1 2c-1.8 0-4-.8-6-3z"/><circle cx="9" cy="12.5" r="1.5"/><circle cx="15" cy="12.5" r="1.5"/></svg><h3>Discord</h3><p>Community communication and collaboration.</p><span class="h">Join the server</span></a>
+<a class="sc ig" href="https://www.instagram.com/sbcodepatch/" target="_blank" rel="noopener noreferrer" aria-label="CodePatch STEM on Instagram, @sbcodepatch, opens in a new tab"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r=".5"/></svg><h3>Instagram</h3><p>Chapter updates, photographs, activities, and announcements.</p><span class="h">@sbcodepatch</span></a>
+<a class="sc yt" href="https://www.youtube.com/@SBCPS-Chapter" target="_blank" rel="noopener noreferrer" aria-label="CodePatch STEM on YouTube, @SBCPS-Chapter, opens in a new tab"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9.2v5.6l5-2.8z"/></svg><h3>YouTube</h3><p>Educational videos, coding demonstrations, and workshop content.</p><span class="h">@SBCPS-Chapter</span></a>
+</div></div></section>
+
+<section class="sec" id="join"><div class="wrap jn">
+<div>
+<h2>Find your way in.</h2>
+<ul class="ways"><li>Join a chapter</li><li>Participate in workshops</li><li>Explore coding</li><li>Participate in mathematics activities</li><li>Contribute to projects</li><li>Help organize educational events</li></ul>
+</div>
+<div class="cpf-root">
+<form class="cpf-form" id="cpf-form" action="https://api.web3forms.com/submit" method="POST" aria-label="CodePatch STEM interest form">
+<input type="hidden" name="access_key" value="efa13730-051b-4fec-bd04-beaf749cb09d">
+<input type="hidden" name="subject" value="New CodePatch STEM interest form submission">
+<input type="hidden" name="from_name" value="CodePatch STEM Website">
+<input type="checkbox" name="botcheck" style="display: none;">
+<div class="cpf-banner" id="cpf-banner" role="alert" hidden></div>
+<p class="cpf-note"><span class="cpf-req" aria-hidden="true">*</span> Required fields</p>
+<div class="cpf-row">
+<div class="cpf-f"><label for="cpf-name">Full Name<span class="cpf-req" aria-hidden="true">*</span></label><input id="cpf-name" name="name" type="text" autocomplete="name" required aria-required="true" aria-describedby="cpf-name-e"><p class="cpf-err" id="cpf-name-e"></p></div>
+<div class="cpf-f"><label for="cpf-email">Email Address<span class="cpf-req" aria-hidden="true">*</span></label><input id="cpf-email" name="email" type="email" inputmode="email" autocomplete="email" required aria-required="true" aria-describedby="cpf-email-e"><p class="cpf-err" id="cpf-email-e"></p></div>
+</div>
+<div class="cpf-f"><label for="cpf-school">School Name<span class="cpf-req" aria-hidden="true">*</span></label><input id="cpf-school" name="school" type="text" autocomplete="organization" required aria-required="true" aria-describedby="cpf-school-e"><p class="cpf-err" id="cpf-school-e"></p></div>
+<div class="cpf-row">
+<div class="cpf-f"><label for="cpf-grade">Grade Level<span class="cpf-req" aria-hidden="true">*</span></label><select id="cpf-grade" name="grade" required aria-required="true" aria-describedby="cpf-grade-e"><option value="">Select grade</option><option>9</option><option>10</option><option>11</option><option>12</option><option>Other</option></select><p class="cpf-err" id="cpf-grade-e"></p></div>
+<div class="cpf-f"><label for="cpf-interest">Area of Interest<span class="cpf-req" aria-hidden="true">*</span></label><select id="cpf-interest" name="interest" required aria-required="true" aria-describedby="cpf-interest-e"><option value="">Select an area</option><option>Computer Science</option><option>Mathematics</option><option>Engineering</option><option>Technology</option><option>Marketing</option><option>Unsure</option></select><p class="cpf-err" id="cpf-interest-e"></p></div>
+</div>
+<div class="cpf-f"><label for="cpf-message">Messages<span class="cpf-req" aria-hidden="true">*</span></label><textarea id="cpf-message" name="message" rows="4" required aria-required="true" aria-describedby="cpf-message-e" placeholder="Please state what you are interested in, what your participation levels will be, what your current math level is, and please state what is your background in the STEM Field and really talk about yourself- Give atleast 4 sentences to sum up everything. If you dont do this then the form will be automatically denied."></textarea><p class="cpf-err" id="cpf-message-e"></p></div>
+<button class="cpf-btn" type="submit">Send Transmission</button>
+<p class="cpf-note">Your answers are emailed to the CodePatch team. Prefer chat? Discord is the fastest way to reach us.</p>
+</form>
+<div class="cpf-portal" id="cpf-portal" role="dialog" aria-modal="true" aria-labelledby="cpf-pt" aria-describedby="cpf-pm" tabindex="-1" hidden>
+<div class="cpf-in">
+<div class="cpf-check" aria-hidden="true"><svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="24"/><path d="M15 27l8 8 14-16" pathLength="1"/></svg></div>
+<h2 id="cpf-pt">TRANSMISSION SECURED</h2>
+<p id="cpf-pm">Your application logs have bypassed the firewall and reached our mainframes. Redirecting back to base camp...</p>
+<div class="cpf-bar" aria-hidden="true"><div class="cpf-trk"><i></i></div></div>
+</div>
+</div>
+</div>
+</div></section>
+
+<section class="sec" id="faq"><div class="wrap fq">
+<h2 style="margin-bottom:1.5rem">Questions</h2>
+<details><summary>What is CodePatch STEM?</summary><p>An organization that promotes accessible STEM education through computer science, mathematics, engineering, technology, student collaboration, workshops, and educational initiatives.</p></details>
+<details><summary>What is a chapter?</summary><p>A school-based group of CodePatch STEM members. South Brunswick High School is our featured chapter.</p></details>
+<details><summary>Do you run workshops?</summary><p>Workshops are part of our mission. Confirmed dates will appear in the events section, and Discord and Instagram carry announcements.</p></details>
+<details><summary>How do I take part?</summary><p>Use the interest form above, or join the Discord server and say hello. You can explore coding, join mathematics activities, or help organize events.</p></details>
+<details><summary>Can I start a chapter at my school?</summary><p>The chapter directory is built to grow. Use the interest form or Discord, mention your school, and say you want to start a chapter.</p></details>
+</div></section>
+
+<section class="fin"><h2>THE FUTURE IS BUILT TOGETHER.</h2><p>Explore STEM. Develop ideas. Build something meaningful.</p><a class="btn" href="#join">Get Involved</a></section>
+</main>
+
+<footer>
+<div><strong style="color:var(--t);font-family:var(--hd);font-size:1.1rem">CodePatch STEM</strong><p>South Brunswick High School chapter, South Brunswick, New Jersey, USA</p><p>Official email: to be announced</p></div>
+<div class="fl"><a href="https://discord.gg/uTWEKDgGu" target="_blank" rel="noopener noreferrer" aria-label="Discord, opens in a new tab">Discord</a><a href="https://www.instagram.com/sbcodepatch/" target="_blank" rel="noopener noreferrer" aria-label="Instagram, opens in a new tab">Instagram</a><a href="https://www.youtube.com/@SBCPS-Chapter" target="_blank" rel="noopener noreferrer" aria-label="YouTube, opens in a new tab">YouTube</a><a href="#top">Back to top</a></div>
+<nav class="fb" aria-label="Footer"><a href="#mission">Mission</a><a href="#stem">STEM</a><a href="#path">Path</a><a href="#chapter">Chapter</a><a href="#team">Team</a><a href="#connect">Connect</a><a href="#join">Join</a><a href="#faq">FAQ</a></nav>
+<p class="fc">© 2026 CodePatch STEM. South Brunswick High School chapter. Student safety first: no personal contact details are published on this site.</p>
+</footer>
+
+<script>
+(()=>{
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const clamp=(v,a,b)=>Math.min(b,Math.max(a,v)),sm=(p,a,b)=>{const t=clamp((p-a)/(b-a),0,1);return t*t*(3-2*t)};
+document.documentElement.classList.add('js');
+const RM=matchMedia('(prefers-reduced-motion: reduce)');
+
+/* nav */
+const nv=$('#nv'),mb=$('.mbtn'),shut=()=>{nv.classList.remove('open');mb.setAttribute('aria-expanded','false')};
+mb.onclick=()=>mb.setAttribute('aria-expanded',nv.classList.toggle('open'));
+nv.onclick=e=>{if(e.target.closest('a'))shut()};
+addEventListener('keydown',e=>{if(e.key==='Escape')shut()});
+document.addEventListener('visibilitychange',()=>document.body.classList.toggle('paused',document.hidden));
+
+/* hero: a live-drawn flight through a lattice, driven by scroll */
+const hero=$('.hero'),stage=$('.stage'),cv=$('#cv'),cx=cv.getContext('2d');
+let sd=7;const rnd=()=>(sd=(sd*1664525+1013904223)>>>0)/4294967296;
+const SY=['∑','π','∞','√','∫','≈','{ }','</>','λ','θ','Δ','01'];
+const nd=Array.from({length:64},(_,i)=>({x:rnd()*2-1,y:rnd()*2-1,z:rnd(),g:i%5?'':SY[(i/5|0)%12]}));
+let W=1,H=1;
+function size(){const d=Math.min(devicePixelRatio||1,2);W=cv.clientWidth||1;H=cv.clientHeight||1;cv.width=W*d;cv.height=H*d;cx.setTransform(d,0,0,d,0,0)}
+const mx=(a,b,t)=>a+(b-a)*t;
+function draw(p){
+ cx.clearRect(0,0,W,H);
+ const m=Math.min(W,H),ox=W>900?W*.64:W*.5,oy=H*.46,col=[mx(167,56,p),mx(139,189,p),mx(250,248,p)].map(Math.round).join(',');
+ cx.lineWidth=1;
+ for(let i=-9;i<=9;i++){cx.strokeStyle='rgba('+col+',.09)';cx.beginPath();cx.moveTo(ox,oy);cx.lineTo(ox+i*W*.11,H);cx.stroke()}
+ for(let k=0;k<10;k++){const t=(k/10+p*1.4)%1,y=oy+(H-oy)*t*t;cx.strokeStyle='rgba('+col+','+(.03+.15*t).toFixed(3)+')';cx.beginPath();cx.moveTo(0,y);cx.lineTo(W,y);cx.stroke()}
+ const P=nd.map(n=>{const z=((n.z-p*1.6)%1+1)%1,f=1/(.12+z*1.5);return[ox+n.x*m*.24*f,oy+n.y*m*.2*f,Math.min(1,z*6)*Math.min(1,(1-z)*3),f,n.g]});
+ for(let i=0;i<64;i++)for(let j=i+1;j<64;j++){const A=P[i],B=P[j],L=m*.07*(A[3]+B[3]),d=Math.hypot(A[0]-B[0],A[1]-B[1]);if(d<L){const a=Math.min(A[2],B[2])*(1-d/L)*.55;if(a>.02){cx.strokeStyle='rgba('+col+','+a.toFixed(3)+')';cx.beginPath();cx.moveTo(A[0],A[1]);cx.lineTo(B[0],B[1]);cx.stroke()}}}
+ for(const q of P){if(q[2]<.02)continue;cx.fillStyle='rgba('+col+','+q[2].toFixed(3)+')';if(q[4]){cx.font=Math.round(Math.min(34,10+q[3]*5))+'px "JetBrains Mono",monospace';cx.fillText(q[4],q[0],q[1])}else{cx.beginPath();cx.arc(q[0],q[1],Math.min(5,1+q[3]*.8),0,6.283);cx.fill()}}
+ for(let i=0;i<5;i++){const R=m*(.05+.045*i)*(1+p*.35),n=3+i,r0=(i%2?1:-1)*p*4.1+i*.5;cx.strokeStyle='rgba('+col+','+(.55-i*.07).toFixed(2)+')';cx.lineWidth=1.2;cx.beginPath();for(let k=0;k<=n;k++){const a=r0+k/n*6.283;cx.lineTo(ox+Math.cos(a)*R,oy+Math.sin(a)*R)}cx.stroke()}
+}
+const B=$$('.band').map(el=>({el,a:+el.dataset.a,b:+el.dataset.b,op:-1,k:-1}));
+let tgt=0,shown=0,raf=0,last=0,t0=performance.now(),on=false,vis=true;
+function caps(p,now){
+ const lk=sm((now-t0)/1000,0,1);
+ B.forEach((x,i)=>{
+  let op=1;if(i)op*=sm(p,x.a,x.a+.05);if(i<B.length-1)op*=1-sm(p,x.b-.05,x.b);
+  let k=clamp((p-x.a)/.06,0,1);if(!i)k=Math.max(k,lk);
+  if(Math.abs(op-x.op)>.004){x.op=op;x.el.style.opacity=op.toFixed(3);x.el.style.pointerEvents=op>.5?'auto':'none'}
+  if(Math.abs(k-x.k)>.008){x.k=k;x.el.style.setProperty('--k',k.toFixed(3))}
+ });
+}
+const prog=()=>{const r=hero.getBoundingClientRect();return clamp(-r.top/Math.max(1,r.height-innerHeight),0,1)};
+function frame(now){
+ const dt=Math.min(100,now-(last||now));last=now;
+ shown+=(tgt-shown)*(1-Math.pow(.86,dt/16.667));
+ const near=Math.abs(tgt-shown)<.0004;if(near)shown=tgt;
+ draw(shown);caps(shown,now);
+ if(near&&now-t0>1000){raf=0;last=0}else raf=requestAnimationFrame(frame);
+}
+const kick=()=>{tgt=prog();if(!raf&&vis&&on)raf=requestAnimationFrame(frame)};
+new IntersectionObserver(e=>{vis=e[0].isIntersecting;if(vis)kick()}).observe(hero);
+const GATES=['(max-width: 720px)','(orientation: portrait) and (max-width: 1024px)','(orientation: portrait) and (pointer: coarse)','(orientation: landscape) and (pointer: coarse) and (max-height: 560px)','(prefers-reduced-motion: reduce)'];
+function mode(){
+ const st=GATES.some(q=>matchMedia(q).matches);
+ if(st&&on){on=false;removeEventListener('scroll',kick);cancelAnimationFrame(raf);raf=0}
+ if(!st&&!on){on=true;addEventListener('scroll',kick,{passive:true});B.forEach(x=>{x.op=-1;x.k=-1});t0=performance.now();last=0;shown=tgt=prog();size();kick()}
+ if(st){size();draw(.14)}
+}
+const MQ=GATES.map(q=>matchMedia(q));MQ.forEach(m=>m.addEventListener('change',mode));
+new ResizeObserver(()=>{size();draw(on?shown:.14)}).observe(stage);
+mode();
+
+/* mission: words light up with scroll */
+const mt=$('.mt');mt.innerHTML=mt.textContent.trim().split(/\s+/).map(w=>'<span class="w">'+w+'</span>').join(' ');
+const ws=$$('.w',mt),ms=$('.mis');let ln=-1;
+function mis(){const r=ms.getBoundingClientRect(),p=RM.matches?1:clamp(-r.top/Math.max(1,r.height-innerHeight),0,1),n=Math.round(p*ws.length*1.15);if(n!==ln){ln=n;ws.forEach((w,i)=>w.classList.toggle('l',i<n))}}
+addEventListener('scroll',mis,{passive:true});RM.addEventListener('change',mis);mis();
+
+/* four dimensions: the panel follows the text */
+const ills=$$('.ill'),sts=$$('.stp');let ai=0;
+const sio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const i=sts.indexOf(e.target);if(i!==ai){ai=i;ills.forEach((x,j)=>x.classList.toggle('on',j===i));sts.forEach((x,j)=>x.classList.toggle('on',j===i))}}),{rootMargin:'-45% 0px -45% 0px'});
+sts.forEach(s=>sio.observe(s));
+
+/* the one interactive moment: hold to run the patch */
+const hb=$('#hold'),hs=$('#hst'),hbar=$('.bar'),hl=$$('.term .ln'),hc=$$('.st');
+let hp=0,hd=false,hold=false,hr=0,hl0=0,hn=-1,hv=-1,ht='';
+function hrender(){
+ const n=Math.min(3,Math.floor(hp*3.0001));
+ if(Math.abs(hp-hv)>.004||hp===0||hp===1){hv=hp;hbar.style.setProperty('--h',hp.toFixed(3))}
+ if(n!==hn){hn=n;hl.forEach((l,i)=>l.classList.toggle('d',i<n));hc.forEach((c,i)=>c.classList.toggle('d',i<n))}
+ const t=hd?'All three stages complete. Built together.':hold?'Running the patch...':hp>0?'Easing back...':'Idle. Press and hold the button.';
+ if(t!==ht){ht=t;hs.textContent=t}
+}
+function hstep(now){
+ const dt=Math.min(60,now-(hl0||now));hl0=now;
+ hp=clamp(hp+(hold?dt/1800:-dt/700),0,1);
+ if(hp>=1){hd=true;hold=false}
+ hrender();
+ if((hold&&hp<1)||(!hold&&hp>0&&!hd))hr=requestAnimationFrame(hstep);else{hr=0;hl0=0}
+}
+const press=()=>{if(hd){hd=false;hp=0}hold=true;if(!hr)hr=requestAnimationFrame(hstep)};
+const release=()=>{hold=false;if(!hr&&hp>0&&!hd)hr=requestAnimationFrame(hstep)};
+hb.addEventListener('pointerdown',e=>{if(RM.matches)return;e.preventDefault();if(hb.setPointerCapture)hb.setPointerCapture(e.pointerId);press()});
+['pointerup','pointercancel','lostpointercapture'].forEach(t=>hb.addEventListener(t,release));
+hb.addEventListener('keydown',e=>{if(RM.matches)return;if((e.key===' '||e.key==='Enter')&&!e.repeat){e.preventDefault();press()}});
+hb.addEventListener('keyup',e=>{if(e.key===' '||e.key==='Enter')release()});
+hb.addEventListener('click',()=>{if(RM.matches){hp=1;hd=true;hrender()}});
+
+/* roster: one record per person, departments as tags */
+const D={Coding:'Programming and software development.',Mathematics:'Mathematical reasoning and problem-solving.',Marketing:'Brand, social media, and chapter photography.'};
+const M=[['Srijeet Ghosh',['Chapter President'],[]],['Tejas',['HR / Recruitment Lead','Marketing Lead','Social Media Coordinator'],['Marketing']],['Akshaj',['Mathematics Department Lead'],['Mathematics']],['Nirbhay',['Chapter Photographer'],['Marketing']],['Adithya',[],['Coding']],['Satvik',[],['Coding']],['Sathvik',[],['Coding','Mathematics']],['Almeir',[],['Mathematics']],['Mayank',[],['Mathematics']],['Oliver',[],['Marketing']],['Kyrus',[],['Marketing']],['Sai',[],['Marketing']]];
+$('#roster').innerHTML=M.map(([n,r,d],i)=>'<li class="rv" style="--i:'+(i%4)+'"><article class="mc" data-d="'+d.join(',')+'"><span class="av" style="--hu:'+((i*47+260)%360)+'" aria-hidden="true">'+n.split(' ').map(w=>w[0]).join('')+'</span><h3>'+n+'</h3>'+(r.length?r:['Member']).map(x=>'<p class="ro">'+x+'</p>').join('')+'<p class="tags">'+(d.length?d:['Leadership']).map(x=>'<span class="tag">'+x+'</span>').join('')+'</p></article></li>').join('');
+const dd=$('#dd');
+$$('.chip').forEach(c=>c.onclick=()=>{
+ $$('.chip').forEach(x=>x.setAttribute('aria-pressed',x===c?'true':'false'));
+ const v=c.dataset.f;let n=0;
+ $$('.mc').forEach(m=>{const hit=v==='All'||m.dataset.d.split(',').includes(v);if(hit)n++;m.classList.toggle('x',!hit)});
+ dd.textContent=v==='All'?'Showing all twelve members.':D[v]+' '+n+(n===1?' member.':' members.');
+});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+$$('.rv').forEach(el=>io.observe(el));
+})();
+</script>
+<script>
+(()=>{
+'use strict';
+const form=document.getElementById('cpf-form'),portal=document.getElementById('cpf-portal');
+if(!form||!portal)return;
+document.body.appendChild(portal); /* escape any transformed ancestor so position:fixed covers the viewport */
+form.noValidate=true;
+const TO='sbcpssocial5@gmail.com',DISCORD='https://discord.gg/uTWEKDgGu',SHOW_MS=4000,FADE_MS=650;
+const $=id=>document.getElementById(id),banner=$('cpf-banner'),btn=form.querySelector('.cpf-btn'),btnTxt=btn.textContent;
+const ENDPOINT=form.action;
+const EMAIL=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+const req={
+ name:{el:$('cpf-name'),err:$('cpf-name-e'),check:v=>v.trim()?'':'Please enter your full name.'},
+ email:{el:$('cpf-email'),err:$('cpf-email-e'),check:v=>!v.trim()?'Please enter your email address.':EMAIL.test(v.trim())?'':'Enter a valid email, like name@example.com.'},
+ school:{el:$('cpf-school'),err:$('cpf-school-e'),check:v=>v.trim()?'':'Please enter your school name.'},
+ grade:{el:$('cpf-grade'),err:$('cpf-grade-e'),check:v=>v?'':'Please select your grade level.'},
+ interest:{el:$('cpf-interest'),err:$('cpf-interest-e'),check:v=>v?'':'Please select an area of interest.'},
+ message:{el:$('cpf-message'),err:$('cpf-message-e'),check:v=>v.trim()?'':'Please write your message.'}
+};
+let armed=false,busy=false,timer=0,lastFocus=null,y=0,prev=['',''];
+
+function mark(f){const m=f.check(f.el.value);f.err.textContent=m;f.el.setAttribute('aria-invalid',m?'true':'false');return !m}
+function validate(){let first=null;for(const k in req)if(!mark(req[k])&&!first)first=req[k].el;return first}
+function link(href,txt,ext){const a=document.createElement('a');a.href=href;a.textContent=txt;if(ext){a.target='_blank';a.rel='noopener noreferrer'}return a}
+function show(kind,strong,text,extra){
+ const p=document.createElement('p'),s=document.createElement('strong');
+ s.textContent=strong;p.append(s,' '+text,...(extra||[]));
+ banner.dataset.kind=kind;banner.replaceChildren(p);banner.hidden=false;
+ banner.style.animation='none';void banner.offsetWidth;banner.style.animation='';
+}
+function resetState(){
+ armed=false;banner.hidden=true;
+ for(const k in req){req[k].err.textContent='';req[k].el.removeAttribute('aria-invalid')}
+}
+for(const k in req)req[k].el.addEventListener('input',()=>{
+ if(!armed)return;mark(req[k]);
+ if(banner.dataset.kind==='block'&&!Object.values(req).some(f=>f.el.getAttribute('aria-invalid')==='true'))banner.hidden=true;
+});
+
+function lock(){const h=document.documentElement,sb=window.innerWidth-h.clientWidth;y=window.scrollY;prev=[h.style.overflow,h.style.paddingRight];h.style.overflow='hidden';if(sb>0)h.style.paddingRight=sb+'px'}
+function unlock(){const h=document.documentElement;h.style.overflow=prev[0];h.style.paddingRight=prev[1];if(Math.abs(window.scrollY-y)>1)window.scrollTo({top:y,left:0,behavior:'instant'})}
+function openPortal(){
+ lastFocus=document.activeElement;lock();
+ portal.hidden=false;void portal.offsetWidth;portal.classList.add('is-open');
+ portal.focus({preventScroll:true});
+ timer=setTimeout(closePortal,SHOW_MS);
+}
+function closePortal(){
+ clearTimeout(timer);form.reset();resetState();
+ portal.classList.remove('is-open');
+ setTimeout(()=>{portal.hidden=true;unlock();(lastFocus&&lastFocus.focus?lastFocus:btn).focus({preventScroll:true})},FADE_MS);
+}
+document.addEventListener('keydown',e=>{if(!portal.hidden&&e.key==='Tab'){e.preventDefault();portal.focus({preventScroll:true})}});
+
+function fail(msg,d){
+ const body=Object.entries(d).filter(([k])=>!['access_key','subject','from_name'].includes(k)).map(([k,v])=>k+': '+v).join('\n');
+ const mail='mailto:'+TO+'?subject='+encodeURIComponent('CodePatch STEM interest form: '+d.name)+'&body='+encodeURIComponent(body);
+ show('fail','Transmission Failed:',msg+' ',[link(mail,'Email us instead'),' or ',link(DISCORD,'join our Discord',true),'.']);
+}
+async function send(){
+ busy=true;btn.disabled=true;btn.textContent='Transmitting…';banner.hidden=true;
+ const d=Object.fromEntries(new FormData(form));d.name=d.name.trim();d.email=d.email.trim();
+ try{
+  let r,j={};
+  try{r=await fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(d)})}
+  catch(_){throw new Error('We could not reach the server.')}
+  try{j=await r.json()}catch(_){}
+  if(!r.ok||!(j.success===true||j.success==='true'))throw new Error(j.message||'The server rejected the message (error '+r.status+').');
+  openPortal();
+ }catch(err){fail(err.message,d)}
+ finally{busy=false;btn.disabled=false;btn.textContent=btnTxt}
+}
+form.addEventListener('submit',e=>{
+ e.preventDefault();if(busy)return;
+ armed=true;const bad=validate();
+ if(bad){show('block','Transmission Blocked:','Please fill out all required fields marked with an asterisk (*).');bad.focus();return}
+ if(form.elements.botcheck.checked)return; /* honeypot tripped: drop silently */
+ send();
+});
+})();
+</script>
+</body>
+</html>
